@@ -5,7 +5,9 @@
     <classes>
       <class name="com.example.project.TestNgTest">
         <methods>
-          <include name="negativeTestCase"/>
+          <include name="afterTest"/>
+          <include name="captureScreenShot1"/>
+          <include name="beforeTest"/>
         </methods>
       </class> <!-- com.example.project.TestNgTest -->
     </classes>

@@ -8,27 +8,30 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Properties;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class ListenerTest implements ITestListener {
-	private String jenkinEndppoint = "http://10.25.33.47:8084/ords/dev_anthem/twb/service/jenkin";
+public class ListenerTest extends Base implements ITestListener {
+	private String jenkinEndppoint = "https://twb.ors.utah.gov/ords/prod/twb/service/jenkin";
+	
 	
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		try {
 			// fetch the object instance
-			Object testObj = tr.getInstance();
 			
+			Object testObj = tr.getInstance();
+			System.out.println(testObj.getClass().desiredAssertionStatus());
 			// try to fetch the test plan key & test case key
+			
 			Field testPlanKeyField = null;
 			Field testCaseKeyField = null;
 			Object testPlanKeyValue = null;
 			Object testCaseKeyValue = null;
-			
 			try {
 				testPlanKeyField = testObj.getClass().getDeclaredField("testPlanKey");
 				testPlanKeyValue = testPlanKeyField.get(testObj);
@@ -58,7 +61,9 @@ public class ListenerTest implements ITestListener {
 				System.out.println(jenkinBuildId);
 				System.out.println("Failed");
 				System.out.println(testMethod);
-				this.logTestRunJenkinResult(jenkinJobName, jenkinBuildId, "FAIL", testMethod);
+				String base64_image = captureScreenShot();
+				System.out.println(base64_image);
+				//this.logTestRunJenkinResult(jenkinJobName, jenkinBuildId, "FAIL", testMethod, base64_image);
 			} else {
 				//this.logTestRunResult(testPlanKeyValue.toString(), testCaseKeyValue.toString(), "FAIL");
 			}
@@ -87,8 +92,9 @@ public class ListenerTest implements ITestListener {
 			// TODO Auto-generated method stub
 			try {
 				// fetch the object instance
+			    
 				Object testObj = tr.getInstance();
-				
+				System.out.println(testObj.getClass().desiredAssertionStatus());
 				// try to fetch the test plan key & test case key
 				Field testPlanKeyField = null;
 				Field testCaseKeyField = null;
@@ -124,7 +130,7 @@ public class ListenerTest implements ITestListener {
 					System.out.println(jenkinBuildId);
 					System.out.println("Passed");
 					System.out.println(testMethod);
-					this.logTestRunJenkinResult(jenkinJobName, jenkinBuildId, "PASS", testMethod);
+					//this.logTestRunJenkinResult(jenkinJobName, jenkinBuildId, "PASS", testMethod);
 				} else {
 					//this.logTestRunResult(testPlanKeyValue.toString(), testCaseKeyValue.toString(), "PASS");
 				}			
@@ -143,7 +149,7 @@ public class ListenerTest implements ITestListener {
 			} 
 		}
 	 
-	 private void logTestRunJenkinResult(String jenkinJobName, String jenkinBuildId, String status, String testMethod) {
+	 private void logTestRunJenkinResult(String jenkinJobName, String jenkinBuildId, String status, String testMethod, String base64_image) {
 			URL url;
 			try {
 				url = new URL(this.jenkinEndppoint);
@@ -152,7 +158,7 @@ public class ListenerTest implements ITestListener {
 				conn.setRequestMethod("PUT");
 				conn.setRequestProperty("Content-Type", "application/json");
 				
-				TestRunJenkinRequestBody bodyObj = new TestRunJenkinRequestBody(jenkinJobName, jenkinBuildId, status, testMethod);
+				TestRunJenkinRequestBody bodyObj = new TestRunJenkinRequestBody(jenkinJobName, jenkinBuildId, status, testMethod, base64_image);
 							
 				ObjectMapper mapper = new ObjectMapper();
 				String body = mapper.writeValueAsString(bodyObj);			
@@ -197,4 +203,5 @@ public class ListenerTest implements ITestListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
 }

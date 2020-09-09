@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-01T16:11:40 MDT" name="Default suite" finished-at="2020-09-01T16:11:40 MDT" duration-ms="87">
+  <suite started-at="2020-09-09T08:50:16 MDT" name="Default suite" finished-at="2020-09-09T08:50:45 MDT" duration-ms="29162">
     <groups>
     </groups>
-    <test started-at="2020-09-01T16:11:40 MDT" name="Default test" finished-at="2020-09-01T16:11:40 MDT" duration-ms="87">
+    <test started-at="2020-09-09T08:50:16 MDT" name="Default test" finished-at="2020-09-09T08:50:45 MDT" duration-ms="29162">
       <class name="com.example.project.TestNgTest">
-        <test-method signature="doLogin()[pri:1, instance:com.example.project.TestNgTest@34f7cfd9]" started-at="2020-09-01T16:11:40 MDT" name="doLogin" finished-at="2020-09-01T16:11:40 MDT" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.example.project.TestNgTest@747edf66]" started-at="2020-09-09T08:50:16 MDT" name="beforeTest" finished-at="2020-09-09T08:50:24 MDT" duration-ms="8373" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doLogin -->
-        <test-method signature="doPasswordChange()[pri:2, instance:com.example.project.TestNgTest@34f7cfd9]" started-at="2020-09-01T16:11:40 MDT" name="doPasswordChange" finished-at="2020-09-01T16:11:40 MDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- doPasswordChange -->
-        <test-method signature="doLogout()[pri:3, instance:com.example.project.TestNgTest@34f7cfd9]" started-at="2020-09-01T16:11:40 MDT" name="doLogout" finished-at="2020-09-01T16:11:40 MDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- doLogout -->
-        <test-method signature="valueMatch()[pri:4, instance:com.example.project.TestNgTest@34f7cfd9]" started-at="2020-09-01T16:11:40 MDT" name="valueMatch" finished-at="2020-09-01T16:11:40 MDT" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- valueMatch -->
-        <test-method signature="negativeTestCase()[pri:5, instance:com.example.project.TestNgTest@34f7cfd9]" started-at="2020-09-01T16:11:40 MDT" name="negativeTestCase" finished-at="2020-09-01T16:11:40 MDT" duration-ms="3" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- beforeTest -->
+        <test-method signature="captureScreenShot1()[pri:6, instance:com.example.project.TestNgTest@747edf66]" started-at="2020-09-09T08:50:24 MDT" name="captureScreenShot1" finished-at="2020-09-09T08:50:43 MDT" duration-ms="18562" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[The item is lesser than expected [true] but found [false]]]>
+              <![CDATA[Unable to locate element: .//*[@id='emailfield']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'US419BIMALLA1', ip: '192.168.0.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 80.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200831163820, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 82612, moz:profile: C:\Users\bimalla\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 66d9f8f5-edb8-4e67-9440-8a6ada0c805d
+*** Element info: {Using=xpath, value=.//*[@id='emailfield']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The item is lesser than expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at com.example.project.TestNgTest.negativeTestCase(TestNgTest.java:33)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: .//*[@id='emailfield']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'US419BIMALLA1', ip: '192.168.0.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 80.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200831163820, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 82612, moz:profile: C:\Users\bimalla\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 66d9f8f5-edb8-4e67-9440-8a6ada0c805d
+*** Element info: {Using=xpath, value=.//*[@id='emailfield']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.example.project.TestNgTest.captureScreenShot1(TestNgTest.java:49)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -64,10 +77,14 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- negativeTestCase -->
+        </test-method> <!-- captureScreenShot1 -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.example.project.TestNgTest@747edf66]" started-at="2020-09-09T08:50:43 MDT" name="afterTest" finished-at="2020-09-09T08:50:45 MDT" duration-ms="2014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
       </class> <!-- com.example.project.TestNgTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
